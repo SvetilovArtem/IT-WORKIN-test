@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../scss/blocks/form.module.scss'
 import { useDispatch } from 'react-redux'
 import { addUser } from '../redux/slices/userSlice'
@@ -29,7 +29,7 @@ const Form = () => {
 
   const addUserHandler = (e:any) => {
     e.preventDefault()
-    if(firstNameIsValid && lastNameIsValid && emailIsValid) {
+    if((firstNameIsValid && lastNameIsValid && emailIsValid) && (firstName.length > 1 && lastName.length > 1)) {
       dispatch(addUser(state))
       setResult('Сохранено')
       setTimeout(() => {
