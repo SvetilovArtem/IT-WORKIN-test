@@ -28,10 +28,10 @@
     border: 1px solid $white;
     border-top: none;
     .table_cell {
-        display: flex;
-        justify-content: center;
+        text-align: center;
         padding: 5px 10px;
         width: 160px;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         &:not(:last-child) {
