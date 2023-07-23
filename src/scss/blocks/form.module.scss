@@ -37,6 +37,11 @@
             background-color: rgba($primary-color, $alpha: 0.85);
         }
     }
+    .result {
+        color: rgb(123, 238, 123);
+        font-size: 14px;
+        line-height: 18px;
+    }
     .error_message {
         color: rgb(253, 105, 105);
         font-size: 13px;

@@ -7,7 +7,6 @@ interface ITableCellProps {
 }
 
 const TableCell = ({ item, number }:ITableCellProps) => {
-
   return (
       typeof(item) === 'object' 
       ? 

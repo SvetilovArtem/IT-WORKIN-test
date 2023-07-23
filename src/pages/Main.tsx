@@ -13,17 +13,15 @@ import Footer from '../components/Footer'
 
 const columns = [
     {colId: 0, title: '№', name: 'id'},
-    {colId: 1, title: 'First name', name: 'firstName'},
-    {colId: 2, title: 'Last name', name: 'lastName'},
+    {colId: 1, title: 'Имя', name: 'firstName'},
+    {colId: 2, title: 'Фамилия', name: 'lastName'},
     {colId: 3, title: 'E-mail', name: 'email'},
-    {colId: 4, title: 'Actions', name: 'actions'}
+    {colId: 4, title: 'Функции', name: 'actions'}
 ]
 
 const Main = () => {
   const usersList = useSelector(users)
   const deleteMode = useSelector(deleteItemMode)
-
-  // const usersFromLs = localStorage.getItem('users') || []
 
   const usersData = JSON.parse(localStorage.getItem('users')!) || usersList
 
