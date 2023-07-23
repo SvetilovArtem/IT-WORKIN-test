@@ -17,7 +17,7 @@ const Form = () => {
   const [firstNameIsValid, setFirstNameIsValid] = useState(true)
   const [lastNameIsValid, setLastNameIsValid] = useState(true)
   const [emailIsValid, setEmailIsValid] = useState(true)
-  const [formIsValid, setFormIsValid] = useState(false)
+
   const [result, setResult] = useState('')
 
   const { firstName, lastName, email } = state
@@ -25,17 +25,18 @@ const Form = () => {
   const onChangeField = (e:any) => {
     setState({ ...state, [e.target.name]: e.target.value })
     validateFields(e)
-    setFormIsValid(firstNameIsValid && lastNameIsValid && emailIsValid)
   }
 
   const addUserHandler = (e:any) => {
     e.preventDefault()
-    dispatch(addUser(state))
-    setResult('Сохранено')
-    setTimeout(() => {
-      setState(initialState)
-      setResult('')
-    }, 1000)
+    if(firstNameIsValid && lastNameIsValid && emailIsValid) {
+      dispatch(addUser(state))
+      setResult('Сохранено')
+      setTimeout(() => {
+        setState(initialState)
+        setResult('')
+      }, 1000)
+    }
   }
 
   const validateFields = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -73,7 +74,7 @@ const Form = () => {
             <input type="email" className={styles.input} name='email' value={email} onChange={onChangeField} onBlur={validateFields} />
             { emailIsValid === false && <div className={styles.error_message}>Email должен содержать не менее 5 символов, включая "@".</div> }
         </div>
-        <button className={styles.primary_button} onClick={addUserHandler}>Добавить</button>
+        <button className={styles.primary_button} onClick={addUserHandler} disabled={!(firstNameIsValid && lastNameIsValid && emailIsValid)}>Добавить</button>
         <div className={styles.result}>{ result }</div>
     </form>
   )

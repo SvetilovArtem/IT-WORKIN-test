@@ -33,6 +33,12 @@
         border-radius: 7px;
         width: 130px;
         transition: all .3s ease-in-out;
+        &:disabled {
+            background-color: #888;
+        }
+        &:disabled:hover {
+            background-color: #888;
+        }
         &:hover {
             background-color: rgba($primary-color, $alpha: 0.85);
         }

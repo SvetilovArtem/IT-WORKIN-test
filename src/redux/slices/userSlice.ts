@@ -16,17 +16,14 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     addUser: (state, action) => {
-        const newUsers = state.users.map((user, index) => {
-          return { ...user, id: index + 1 }
-        }) 
-        state.users = [ ...newUsers, action.payload ]
-        localStorage.setItem('users', JSON.stringify(state.users))
+      state.users = [ ...state.users, action.payload ]
+      localStorage.setItem('users', JSON.stringify(state.users))
     },
     toggleDeleteItemMode: (state, action) => {
       state.deleteItemMode = action.payload
     },
     deleteUser: (state, action) => {
-      state.users = state.users.filter(user => user.id !== action.payload.id)
+      state.users = state.users.filter(user => (user.firstName !== action.payload.firstName) && (user.lastName !== action.payload.lastName) && (user.email !== action.payload.email))
       localStorage.setItem('users', JSON.stringify(state.users))
     }
   },

@@ -4,9 +4,9 @@
     width: 320px;
     padding: 30px 20px;
     background-color: rgba($white, $alpha: .9);
-
+    overflow: hidden;
+    text-overflow: ellipsis;
     border-radius: 7px;
-
 
     h3 {
         color: $dark-grey;

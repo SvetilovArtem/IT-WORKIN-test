@@ -25,6 +25,7 @@ const Main = () => {
 
   const usersData = JSON.parse(localStorage.getItem('users')!) || usersList
 
+
   const [focusUser, setFocusUser] = useState<DataType>(usersData[0])
 
   return (
