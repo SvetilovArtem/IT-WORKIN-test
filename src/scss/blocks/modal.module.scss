@@ -1,0 +1,36 @@
+@import '../base/vars';
+
+.modal {
+    width: 320px;
+    padding: 30px 20px;
+    background-color: rgba($white, $alpha: .9);
+
+    border-radius: 7px;
+
+
+    h3 {
+        color: $dark-grey;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        .delete_btn, .cancel_btn {
+            padding: 7px 14px;
+            border-radius: 7px;
+        }
+        .delete_btn {
+            background-color: rgb(255, 118, 118);
+            &:hover {
+                background-color: rgb(255, 94, 94);
+            }
+        }
+        .cancel_btn {
+            background-color: rgb(255, 255, 126);
+            &:hover {
+                background-color: rgb(255, 255, 55);
+            }
+        }
+    }
+}

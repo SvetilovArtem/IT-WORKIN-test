@@ -1,0 +1,9 @@
+@import '../base/vars';
+
+.header {
+    padding: 30px 80px;
+    background-color: $orange;
+    .title {
+        font-weight: 700;
+    }
+}

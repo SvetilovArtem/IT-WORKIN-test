@@ -1,0 +1,29 @@
+.footer {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #555;
+    height: 80px;
+    .created_name {
+        grid-column: 2/3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .git_link {
+        display: flex;
+        
+        grid-column: 3/4;
+        justify-content: end;
+        align-items: center;
+        &:hover {
+            svg {
+                transition: all .3s ease;
+                transform: scale(1.07);
+            }
+            
+        }
+        
+    }
+}

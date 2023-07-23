@@ -1,0 +1,50 @@
+@import '../base/vars';
+
+.table {
+    margin: 0 auto;
+    max-width: 1170px;
+    margin-bottom: 40px;
+}
+
+.columns {
+    display: grid;
+    justify-content: center;
+    border: 1px solid $white;
+    font-size: 20px;
+    font-weight: 700;
+    .col_item {
+        padding: 5px 10px;
+    }
+}
+.table__content {
+    display: flex;
+    justify-content: center;
+
+}
+
+.table__row {
+    display: grid;
+    justify-content: center;
+    border: 1px solid $white;
+    border-top: none;
+    .table_cell {
+        display: flex;
+        justify-content: center;
+        padding: 5px 10px;
+        width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:not(:last-child) {
+            border-right: 1px solid $white;
+        }
+    }
+}
+.action {
+    cursor: pointer;
+    &:hover {
+        color: $orange;
+    }
+    &:not(:last-child) {
+        margin-right: 6px;
+    }
+}

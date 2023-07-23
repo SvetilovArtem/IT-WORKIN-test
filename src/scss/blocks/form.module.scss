@@ -1,0 +1,45 @@
+@import '../base/vars';
+
+.form {
+    width: 420px;
+    background-color: rgba($white, $alpha: 0.2);
+    padding: 20px 27px;
+    border-radius: 7px;
+    margin: 40px auto;
+    .form_title {
+        margin-bottom: 15px;
+    }
+    .input_block {
+        display: flex;
+        flex-direction: column;
+        .label {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .input {
+            border: 1px solid #888;
+            border-radius: 7px;
+            height: 40px;
+            padding: 12px;
+            width: 100%
+        }
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    .primary_button {
+        background-color: $primary-color;
+        padding: 14px 16px;
+        border-radius: 7px;
+        width: 130px;
+        transition: all .3s ease-in-out;
+        &:hover {
+            background-color: rgba($primary-color, $alpha: 0.85);
+        }
+    }
+    .error_message {
+        color: rgb(253, 105, 105);
+        font-size: 13px;
+        line-height: 19px;
+    }
+}
